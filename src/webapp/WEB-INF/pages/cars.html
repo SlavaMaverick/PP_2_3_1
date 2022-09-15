@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Cars Table</title>
+  <style>table th, table td {
+    padding: 10px;
+  }</style>
+</head>
+
+<body>
+<h1> Cars Table </h1>
+<style>
+  table {
+    background: #fffafa; /* цвет фона */
+    border: 1px #ff0000 solid; /* стиль внешней рамки */
+  }
+  td {
+    border: 1px green solid; /* стиль рамки ячеек */
+    padding: 0.2em;
+  }
+  th {
+    background: #ffaaaa;
+    border: 1px blue solid; /* стиль рамки заголовков */
+    padding: 0.2em;
+  }
+</style>
+
+<table>
+  <tr>
+    <th>Model</th>
+    <th>Colour</th>
+    <th>Year</th>
+  </tr>
+
+  <th:block th:each = "car : ${cars}">
+
+    <tr>
+      <td th:text = "${car.getModel()}"></td>
+      <td th:text = "${car.getColour()}"></td>
+      <td th:text = "${car.getProdYear()}"></td>
+    </tr>
+
+  </th:block>
+
+</table>
+</body>
+</html>

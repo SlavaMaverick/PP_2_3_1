@@ -1,10 +1,9 @@
-package web.service;
+package web.dao;
 
 import web.model.User;
 import java.util.List;
 
-public interface UserService {
-
+public interface UserDAO {
     void addUser(User user);
 
     User getUserById(Long id);
